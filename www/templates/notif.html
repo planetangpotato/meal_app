@@ -1,0 +1,62 @@
+<ion-view view-title="Notification">
+<ion-content>
+
+<div class="row">
+     <!--  <div class="col col-50">
+      </div> -->
+      <div class="col ">
+        <label class="item item-input" >
+          <i class="icon ion-ios-search placeholder-icon"></i>
+          <input type="text" placeholder="Search" ng-model="search">
+        </label>
+      </div>
+    </div>
+<!--     <div ng-controller="notif" ng-init="getnotif()">
+  
+      <ion-list>
+      <ion-item ng-repeat = "x in mynotif track by $index ">
+        <div menu-close href="#/app/message" style="border-color: #546f7a;" ng-click="save($index)">
+          <a class="item item-body" id="date" name="date" ng-model="date" style="color: #546f7a;"> {{x.notif_date}} </a>
+          <i class="ion-android-alert" id="title" name="title"> {{x.title}} </i>
+         </div> </ion-item>
+        <div> <div class="col text-right" ng-controller='deleteco'>
+            <button ng-click="deletecom(x.id)" style="color:#546f7a; font-size:30px; margin-top:45%;" class="button button-icon ion-android-delete badge-container"></button>
+          </div> </div>
+      </div>
+ -->
+ <!--    <div class="row">
+          <div class="col text-left">
+            <ion-item menu-close href="#/app/message" class="bar-calm" style="border-color: #546f7a;"> <h3 style="color: #546f7a;">Day 2: 7:30am<br>
+            <i class="ion-android-alert" >Breakfast!</i>
+            </ion-item>
+          </div>
+          <div><div class="col text-right">
+            <button style='color:#546f7a;font-size:30px;margin-top:45%;'  class="button button-icon ion-android-delete badge-container"></button>
+          </div></div>
+      </div>
+
+      -->
+
+        <div  ng-repeat="x in notification track by $index">
+      <div class="list card">
+        <div class="item item-avatar item-text-wrap" style="background-color: rgb(241,241,241);">
+          <p style="font-weight: bold;font-size:18px;">{{x.notif_time}}</p>
+          <p style="width: 100%;color: green;font-size:14px;">{{x.title}}</p>
+        </div>
+
+  <div class="row" ng-controller="notif">
+   <div class="col"><button ng-click="deletedd(x.id)" class="button icon ion-trash-b"></button></div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"><button ng-click="me(x.id)" class="button icon ion-email"></button></div>
+  </div> 
+  </div> 
+</div>
+        </div><br><br>
+
+</ion-content>
+</ion-view>
+
+
+  

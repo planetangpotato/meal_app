@@ -1,0 +1,39 @@
+<ion-view view-title="Alarm">
+
+<ion-content>
+<!-- 
+      
+	<div class="item item-body">
+			<p>July 2, 2017 1:00pm</p>
+    <img class="full-image" src="img/img4.jpg">
+    <i class="ion-android-alert">Eat your meal!</i>
+    
+	    <center><h4> Food for today: </h4>
+		    <p> Rice </p>
+		 	<p> Chicken </p> </center>
+	</div>
+ -->
+
+	<div ng-controller="message" ng-init="getnotif( )" >
+		<div ng-repeat="notif  in mynotif track by $index"> 
+		        <h5 id="time" name="time" style="margin-left: 5px"> {{notif.notif_time}} </h5>
+		        <div class="item item-body">
+		        <br> <img class="full-image" src="img/img4.jpg">
+		    	<i class="ion-android-alert" id="title" name="title"> {{notif.title}}</i>
+		        	<p style="text-align: center;"> Food for today: </p>
+		        	<p id="food" name="food" style="text-align: center;">{{notif.food}} </p>
+		       </div>
+		</div>
+	</div>
+<br><br>
+ 
+		<!-- <div class="row">
+		  <button class="button icon-left ion-alert-circled button-assertive col text-left button button-small">Dismiss</button> -->
+
+		<a class="button icon-left ion-close-circled button-calm col text-left button button-small" href="#/app/notif">Okay</a>
+		</div>
+</div>
+<br><br><br>
+
+</ion-content>
+</ion-view>

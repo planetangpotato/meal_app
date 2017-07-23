@@ -1,0 +1,50 @@
+
+<ion-view view-title="Register"></ion-view>
+<ion-item style="text-align:center; background-image: url(img/img3.jpg); background-repeat: no-repeat; background-size: cover; ">
+            <br> <img src="img/applogo.png" width="150px">
+<div class="padding list" ng-controller="register" >
+        <form ng-submit="loginform()">
+
+	       <!-- <p style="text-align:center;padding-bottom: 10px;">{{error}}</p> -->
+                <br>
+                <div class="list">
+
+                <label class="item item-input" style="border-radius: 8px; text-align: center;border-color: green; color: green;">
+                <input type="text" ng-model="fullname" placeholder="Fullname" style="text-align: center;" required>
+              </label>
+            <p> </p>
+            <p> </p>
+              <label class="item item-input" style="border-radius: 8px; text-align: center;border-color: green; color: green;">
+                <input type="text" ng-model="username" placeholder="Username" style="text-align: center;" required>
+              </label>
+            <p> </p>
+            <p> </p>
+              <label class="item item-input" style="border-radius: 8px; text-align: center;border-color: green; color: green;">
+                <input type="password" ng-model="password" placeholder="Password" style="text-align: center;" required>
+              </label>
+            <p> </p>
+            <p> </p>
+               <label class="item item-input" style="border-radius: 8px; text-align: center;border-color: green; color: green;">
+                <input type="text" ng-model="email" placeholder="Email Address" style="text-align: center;" required>
+              </label>
+            <p> </p>
+            <p> </p>
+              <label class="item item-input" style="border-radius: 8px; text-align: center;border-color: green; color: green;">
+                <input type="text" ng-model="home_add" placeholder="Home Address" style="text-align: center;" required>
+              </label>
+            <br>
+
+            <button type="submit" class="button icon-left ion-ios-filing button-calm col text-left button button-small style="text-align: center;">Register</button>
+            <p> </p>
+            <p> </p>
+          <a class="button icon-left ion-close-circled button-assertive col text-left button button-small" href="#/login" style="text-align: center;">Cancel</a>
+
+            
+            </div>
+
+
+                    	
+                <!--<p style="text-align: center"> Do have account? <a href="#/login">Sign in</a></p>-->
+        </form>
+    </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</ion-item>

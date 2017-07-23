@@ -1,0 +1,38 @@
+<ion-side-menus enable-menu-with-back-views="true">
+  <ion-side-menu-content >
+    <ion-nav-bar class="a">
+		<ion-nav-buttons side="right">
+			<button style='color:blue;font-size:20px;margin-top:1%;'  class="button button-icon ion-android-notifications badge-container"><span class="badge badge-assertive">1</span></button>
+		</ion-nav-buttons>
+    	<ion-nav-buttons side="left">
+        	<button class="button button-icon  ion-navicon" menu-toggle="left">
+        	</button> 
+    	</ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+<ion-side-menu side="left" width="200">
+	<ion-list>
+		<ion-item class="item-thumbnail" style="text-align:center; color:#4bb3d5">
+			<img src="img/applogo.png" width="150px">
+		</ion-item>
+					
+		<ion-list>
+			<ion-item menu-close href="#/app/help" style="color: #4bb3d5;">
+       			<i class="icon ion-help-circled placeholder-icon" style="color: #4bb3d5;"></i>Help
+       		</ion-item>
+			<ion-item menu-close href="#/app/profile" style="color: #4bb3d5;">
+       			<i class="icon ion-person placeholder-icon" style="color: #4bb3d5;"></i>Profile
+      		</ion-item>
+			<ion-item menu-close href="#/app/search" style="color: #4bb3d5;">
+				<i class="icon ion-search placeholder-icon" style="color: #4bb3d5;"></i>Search
+      		</ion-item>
+			<ion-item menu-close href="#/app/logout" style="color: #4bb3d5;">
+       			<i class="icon ion-log-out placeholder-icon" style="color: #4bb3d5;"></i>Log out
+      		</ion-item>
+		</ion-list>
+	</ion-list>
+</ion-side-menu>
+
+</ion-side-menus>

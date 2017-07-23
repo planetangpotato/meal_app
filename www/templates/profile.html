@@ -1,0 +1,23 @@
+<ion-view view-title="Profile" >
+  <ion-content ng-controller="profile" style="text-align:center;"  > 
+    <!-- <div class="item item-body" > -->
+      <div class="list card" style="text-align:center; background-image:url(img/img1.jpg); background-size: cover;" >
+        <img src="img/profile.png" style="border-radius: 100px; width:150px; height: auto;">
+      </div>
+<!-- <div ng-repeat ="x in me track by $index"> -->
+      <div class="list card" style="border-color: #546f7a"  ng-init="getnotif( )"  >   
+        <h4 style="color: #7b312d;" > {{names}}</h4>
+        <a href="#" class="item item-icon-left">
+          <i class="icon ion-email" style="color: #4bb3d5;"></i>
+            <h2 style="color: #7b312d;">Email Address</h2>
+            <p>{{email}}</p>
+        </a>
+        <a href="#" class="item item-icon-left">
+          <i class="icon ion-ios-location" style="color: #4bb3d5;"></i>
+            <h2 style="color: #7b312d;">Home Address</h2>
+            <p>{{home_add}}</p>
+        </a>
+      <!-- </div> -->
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,40 @@
+<ion-view view-title="login">
+
+<ion-item style="text-align:center; background-image:url(img/img3.jpg); background-repeat; background-size: cover;">
+
+<div class="list card" style="opacity: .80; text-align: center; border-radius: 10px ">
+
+<br><img src="img/applogo.png" width=" 150px">
+
+	<ion-list>
+			<div class="padding list" ng-controller="login">
+				<form ng-submit="loginform()">
+					<p style="text-align:center; padding-bottom: 10px;"> {{error}}</p><br>
+					
+					<div class="list">
+					<p> </p>
+						<label class="item item-input" style="border-radius: 8px; text-align: center; border-color: green; color: green;">
+							<input type ="text" ng-model="username" placeholder="	Username" style="text-align: center;" required>
+						</label> <p> </p>
+						<p> </p>
+						<label class="item item-input" style="border-radius: 8px; text-align: center;border-color: green; color: green;">
+							<input type ="password" ng-model="password" placeholder="	Password" style="text-align: center;" required>
+						</label> <p> </p>
+						<br>
+						<button type="submit" class="button button-block button-positive" style="border-radius:50px;">
+						Submit
+						</button>
+						
+						
+						<a style="text-align: center;" href="#/register">Create your own account?
+						</a>
+						
+					</div>
+						
+				</form>
+			</div>
+	</ion-list> <br> <br> <br> </div> <br><br><br><br><br><br><br><br>
+				
+</ion-item>
+
+</ion-view>
