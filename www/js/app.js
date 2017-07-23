@@ -80,7 +80,12 @@ templateUrl:'templates/login.html'
     
       }
     }
-  });
+  })
+
+	.state('setup',{
+		url: '/setup',
+		templateUrl: 'templates/setup.html'
+	})
 	
-	$urlRouterProvider.otherwise('/login')
+	$urlRouterProvider.otherwise('/setup')
 });

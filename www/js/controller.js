@@ -1,6 +1,24 @@
 angular.module('starter.controller',['ionic'])
-	//LOGINNNNNNNNNNNNNNNNN
 
+    // SETUPIP
+    .controller('setupip',function($state,$scope){
+
+
+        $scope.setup = function(){
+            var ip = document.getElementById('ipadd').value;
+            if(ip == ""){
+                $scope.errorlabel = 'Please set a server.';
+            }else{
+                localStorage.setItem('ipadd',ip);
+                $state.go('login');
+            }
+        }
+
+    })
+
+
+
+	//LOGINNNNNNNNNNNNNNNN
     .controller('login', function ($scope, $http, $state, $ionicHistory ){
     $scope.loginform = function(){
         var username = $scope.username;
@@ -10,7 +28,7 @@ angular.module('starter.controller',['ionic'])
 
         $http.defaults.headers.post['Content-Type'] = 'applicaation/x-www-form-urlencoded; charset=UTF-8';
         $http({
-            url: 'http://localhost/meal_app/include/login.php',
+            url: 'http://'+localStorage.getItem('ipadd')+'/meal_app/include/login.php',
             method: "POST",
             data:{
                 'username' : username,
@@ -51,7 +69,7 @@ angular.module('starter.controller',['ionic'])
     
     $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
     $http({
-        url: 'http://localhost/meal_app/include/register.php',
+        url: 'http://'+localStorage.getItem('ipadd')+'/meal_app/include/register.php',
         method: "POST",
         data: {
             'fullname' : fullname,
@@ -92,7 +110,7 @@ angular.module('starter.controller',['ionic'])
      }
     // setInterval(function(){
     //           $http({
-    //     url: 'http://localhost/meal_app/include/profile.php',
+    //     url: 'http://'+localStorage.getItem('ipadd')+'/meal_app/include/profile.php',
     //     method: "POST",
     //     data: {
     //         'fullname' : localStorage.getItem('name')
@@ -100,7 +118,7 @@ angular.module('starter.controller',['ionic'])
     // })
 
     var a = localStorage.getItem('name');
-    $http.get("http://localhost/meal_app/include/profile.php/"+a)
+    $http.get("http://"+localStorage.getItem('ipadd')+"/meal_app/include/profile.php/"+a)
     .then(function(response){
         console.log(response.data[0]);
         localStorage.setItem('data',JSON.stringify(response.data[0]));
@@ -127,14 +145,14 @@ angular.module('starter.controller',['ionic'])
     $scope.sendreport = function(){
     var a = document.getElementById('time').value;
     var b =document.getElementById("food").value;
-    $http.get("http://localhost/meal_app/include/insert.php?food="+b+"&oras="+a)
+    $http.get("http://"+localStorage.getItem('ipadd')+"/meal_app/include/insert.php?food="+b+"&oras="+a)
 
 }
 })
 ////NOTIFICATION
 .controller('notif', function($scope,$http,$state) {
     $scope.$on('$ionicView.beforeEnter', function() {
-    $http.get("http://localhost/meal_app/include/select_notif.php")
+    $http.get("http://"+localStorage.getItem('ipadd')+"/meal_app/include/select_notif.php")
     .then(function(a){
         console.log(a['data'][0]);
         $scope.notification = a['data'];
@@ -175,7 +193,7 @@ angular.module('starter.controller',['ionic'])
 // .controller('editco', function($scope,$http) {
 //  $scope.edit = function(a){
   
-//    $http.get('http://localhost/meal_app/include/edit_notif.php?id='+a)
+//    $http.get('http://'+localStorage.getItem('ipadd')+'/meal_app/include/edit_notif.php?id='+a)
 //  .then(function(a){
 //   console.log(a.data[0]);
 //   document.getElementById('notif_time').value = a.data[0]['notif_time'];
@@ -192,7 +210,7 @@ angular.module('starter.controller',['ionic'])
 //   var lname = document.getElementById('title').value ;
 //   var comments = document.getElementById('food').value;
   
-//   $http.post('http://localhost/meal_app/include/edit.php?id='+id+'&notif_time='+notif_time+'&title='+title+'&food='+food)
+//   $http.post('http://'+localStorage.getItem('ipadd')+'/meal_app/include/edit.php?id='+id+'&notif_time='+notif_time+'&title='+title+'&food='+food)
 //  document.getElementById('notif_time').value = '';
 //   document.getElementById('title').value = '';
 //   document.getElementById('food').value ='';
@@ -212,7 +230,7 @@ angular.module('starter.controller',['ionic'])
 // }
 // function updates(){
 
-//  $http.get('http://localhost/meal_app/include/select_notif.php')
+//  $http.get('http://'+localStorage.getItem('ipadd')+'/meal_app/include/select_notif.php')
 //  .then(function(a){
 //   console.log(a.data);
 //   $scope.comments = a.data;
@@ -224,7 +242,7 @@ angular.module('starter.controller',['ionic'])
 .controller('delete', function($scope,$http) {
 
  $scope.$on('$ionicView.beforeEnter', function() {
-    $http.get("http://localhost/meal_app/include/select_notif.php")
+    $http.get("http://"+localStorage.getItem('ipadd')+"/meal_app/include/select_notif.php")
     .then(function(a){
         console.log(a['data'][0]);
         $scope.notification = a['data'];
@@ -260,14 +278,14 @@ function done() {
 }
 function updates(){
 
- $http.get('http://localhost/meal_app/include/notificationdelete.php')
+ $http.get('http://'+localStorage.getItem('ipadd')+'/meal_app/include/notificationdelete.php')
  .then(function(a){
   console.log(a.data);
   $scope.notification = a.data;
 })
 }
 $scope.deletedd = function (a){
-   $http.get('http://localhost/meal_app/include/delete.php?id='+a)
+   $http.get('http://'+localStorage.getItem('ipadd')+'/meal_app/include/delete.php?id='+a)
 }
 })
 ///////
@@ -276,8 +294,8 @@ $scope.deletedd = function (a){
     $scope.sendreport = function(){
         var food=$scope.data.food;
         var oras=$scope.notif_time;
-        $http.post('http://localhost/meal_app/include/insert.php?food='+food+'oras='+oras)
-        // $http.post('http://localhost/ocabphp/addreport.php?name='+name+'&purok='+purok+'&location='+location+'&type='+type+'&details='+details)
+        $http.post('http://'+localStorage.getItem('ipadd')+'/meal_app/include/insert.php?food='+food+'oras='+oras)
+        // $http.post('http://'+localStorage.getItem('ipadd')+'/ocabphp/addreport.php?name='+name+'&purok='+purok+'&location='+location+'&type='+type+'&details='+details)
         console.log(food);
         $scope.data={};
     }
@@ -289,7 +307,7 @@ $scope.deletedd = function (a){
     $scope.getnotif = function(index,data){
         var a = JSON.parse(localStorage.getItem("notif"));
         console.log(a);
-        $http.get("http://localhost/meal_app/include/notif.php?id="+a)
+        $http.get("http://"+localStorage.getItem('ipadd')+"/meal_app/include/notif.php?id="+a)
 
         .success(function(data){
             $scope.notif = data;
