@@ -87,5 +87,5 @@ templateUrl:'templates/login.html'
 		templateUrl: 'templates/setup.html'
 	})
 	
-	$urlRouterProvider.otherwise('/setup')
+	$urlRouterProvider.otherwise('/login')
 });

@@ -28,7 +28,7 @@ angular.module('starter.controller',['ionic'])
 
         $http.defaults.headers.post['Content-Type'] = 'applicaation/x-www-form-urlencoded; charset=UTF-8';
         $http({
-            url: 'http://'+localStorage.getItem('ipadd')+'/meal_app/include/login.php',
+            url: 'https://jrenzo12345671.000webhostapp.com/login.php',
             method: "POST",
             data:{
                 'username' : username,
@@ -69,7 +69,7 @@ angular.module('starter.controller',['ionic'])
     
     $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
     $http({
-        url: 'http://'+localStorage.getItem('ipadd')+'/meal_app/include/register.php',
+        url: 'https://jrenzo12345671.000webhostapp.com/register.php',
         method: "POST",
         data: {
             'fullname' : fullname,
@@ -118,7 +118,7 @@ angular.module('starter.controller',['ionic'])
     // })
 
     var a = localStorage.getItem('name');
-    $http.get("http://"+localStorage.getItem('ipadd')+"/meal_app/include/profile.php/"+a)
+    $http.get("https://jrenzo12345671.000webhostapp.com/profile.php/"+a)
     .then(function(response){
         console.log(response.data[0]);
         localStorage.setItem('data',JSON.stringify(response.data[0]));
@@ -145,14 +145,14 @@ angular.module('starter.controller',['ionic'])
     $scope.sendreport = function(){
     var a = document.getElementById('time').value;
     var b =document.getElementById("food").value;
-    $http.get("http://"+localStorage.getItem('ipadd')+"/meal_app/include/insert.php?food="+b+"&oras="+a)
+    $http.get("https://jrenzo12345671.000webhostapp.com/insert.php?food="+b+"&oras="+a)
 
 }
 })
 ////NOTIFICATION
 .controller('notif', function($scope,$http,$state) {
     $scope.$on('$ionicView.beforeEnter', function() {
-    $http.get("http://"+localStorage.getItem('ipadd')+"/meal_app/include/select_notif.php")
+    $http.get("https://jrenzo12345671.000webhostapp.com/select_notif.php")
     .then(function(a){
         console.log(a['data'][0]);
         $scope.notification = a['data'];
@@ -242,7 +242,7 @@ angular.module('starter.controller',['ionic'])
 .controller('delete', function($scope,$http) {
 
  $scope.$on('$ionicView.beforeEnter', function() {
-    $http.get("http://"+localStorage.getItem('ipadd')+"/meal_app/include/select_notif.php")
+    $http.get("https://jrenzo12345671.000webhostapp.com/select_notif.php")
     .then(function(a){
         console.log(a['data'][0]);
         $scope.notification = a['data'];
@@ -278,14 +278,14 @@ function done() {
 }
 function updates(){
 
- $http.get('http://'+localStorage.getItem('ipadd')+'/meal_app/include/notificationdelete.php')
+ $http.get('https://jrenzo12345671.000webhostapp.com/notificationdelete.php')
  .then(function(a){
   console.log(a.data);
   $scope.notification = a.data;
 })
 }
 $scope.deletedd = function (a){
-   $http.get('http://'+localStorage.getItem('ipadd')+'/meal_app/include/delete.php?id='+a)
+   $http.get('https://jrenzo12345671.000webhostapp.com/delete.php?id='+a)
 }
 })
 ///////
@@ -294,7 +294,7 @@ $scope.deletedd = function (a){
     $scope.sendreport = function(){
         var food=$scope.data.food;
         var oras=$scope.notif_time;
-        $http.post('http://'+localStorage.getItem('ipadd')+'/meal_app/include/insert.php?food='+food+'oras='+oras)
+        $http.post('https://jrenzo12345671.000webhostapp.com/insert.php?food='+food+'oras='+oras)
         // $http.post('http://'+localStorage.getItem('ipadd')+'/ocabphp/addreport.php?name='+name+'&purok='+purok+'&location='+location+'&type='+type+'&details='+details)
         console.log(food);
         $scope.data={};
@@ -307,7 +307,7 @@ $scope.deletedd = function (a){
     $scope.getnotif = function(index,data){
         var a = JSON.parse(localStorage.getItem("notif"));
         console.log(a);
-        $http.get("http://"+localStorage.getItem('ipadd')+"/meal_app/include/notif.php?id="+a)
+        $http.get("https://jrenzo12345671.000webhostapp.com/notif.php?id="+a)
 
         .success(function(data){
             $scope.notif = data;
