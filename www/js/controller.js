@@ -13,11 +13,16 @@ angular.module('starter.controller',['ionic'])
                 $state.go('login');
             }
         }
-
+ 
     })
 
 
-
+    .controller('set', function($scope,$state){
+        $scope.set= function(a){
+         localStorage.setItem("title",JSON.stringify(a));
+         $state.go("app.meal");
+        }
+    })
 	//LOGINNNNNNNNNNNNNNNN
     .controller('login', function ($scope, $http, $state, $ionicHistory ){
     $scope.loginform = function(){
@@ -102,6 +107,18 @@ angular.module('starter.controller',['ionic'])
 
 ////PROFILE
 .controller('profile',function($scope, $http){
+          done();
+function done() {
+      setTimeout( function()  {
+      updates(); 
+      done();
+      }, 200);
+}
+function updates(){
+
+ $http.get('https://jrenzo12345671.000webhostapp.com/one.php')
+
+}
          $scope.getnotif = function(index,data){
             var c = JSON.parse(localStorage.getItem('data'));
   $scope.names= c['fullname'];
@@ -142,15 +159,43 @@ angular.module('starter.controller',['ionic'])
 
 })
 .controller("meal" , function($scope,$http,$state){
+          done();
+function done() {
+      setTimeout( function()  {
+      updates(); 
+      done();
+      }, 200);
+}
+function updates(){
+
+ $http.get('https://jrenzo12345671.000webhostapp.com/one.php')
+            $scope.a = JSON.parse(localStorage.getItem('title'));
+}
+
+          $scope.a = JSON.parse(localStorage.getItem('title'));
     $scope.sendreport = function(){
     var a = document.getElementById('time').value;
     var b =document.getElementById("food").value;
-    $http.get("https://jrenzo12345671.000webhostapp.com/insert.php?food="+b+"&oras="+a)
+    var c =JSON.parse(localStorage.getItem('title'));
+    $http.get("https://jrenzo12345671.000webhostapp.com/insert.php?food="+b+"&oras="+a+"&title="+c)
+    $state.go("app.set");
 
 }
 })
 ////NOTIFICATION
 .controller('notif', function($scope,$http,$state) {
+             done();
+function done() {
+      setTimeout( function()  {
+      updates(); 
+      done();
+      }, 200);
+}
+function updates(){
+
+ $http.get('https://jrenzo12345671.000webhostapp.com/one.php')
+
+}
     $scope.$on('$ionicView.beforeEnter', function() {
     $http.get("https://jrenzo12345671.000webhostapp.com/select_notif.php")
     .then(function(a){
@@ -240,7 +285,18 @@ angular.module('starter.controller',['ionic'])
 
 //// DELETE
 .controller('delete', function($scope,$http) {
+         done();
+function done() {
+      setTimeout( function()  {
+      updates(); 
+      done();
+      }, 200);
+}
+function updates(){
 
+ $http.get('https://jrenzo12345671.000webhostapp.com/one.php')
+
+}
  $scope.$on('$ionicView.beforeEnter', function() {
     $http.get("https://jrenzo12345671.000webhostapp.com/select_notif.php")
     .then(function(a){
@@ -303,7 +359,36 @@ $scope.deletedd = function (a){
 
 
 //////
+
+.controller('menu',function($scope,$http){
+                 done();
+function done() {
+      setTimeout( function()  {
+      updates(); 
+      done();
+      }, 200);
+}
+function updates(){
+    $http.get('https://jrenzo12345671.000webhostapp.com/count.php').then(function(q){
+        console.log(q.data[0]['me']);
+        $scope.me = q.data[0]['me'];
+    })  
+
+}
+})
 .controller('message', function($scope, $http, $state){
+             done();
+function done() {
+      setTimeout( function()  {
+      updates(); 
+      done();
+      }, 200);
+}
+function updates(){
+
+ $http.get('https://jrenzo12345671.000webhostapp.com/one.php')
+
+}
     $scope.getnotif = function(index,data){
         var a = JSON.parse(localStorage.getItem("notif"));
         console.log(a);

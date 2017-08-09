@@ -18,9 +18,9 @@
 		</ion-item>
 					
 		<ion-list>
-			<!-- <ion-item menu-close href="#/app/api" style="color: green;">
+			<ion-item menu-close href="#/app/api" style="color: green;">
 				    <i class="icon ion-social-facebook placeholder-icon" style="color: green;"></i> Food Tips
-      		</ion-item> -->
+      		</ion-item>
 			<ion-item menu-close href="#/app/profile" style="color: green;">
        			<i class="icon ion-person placeholder-icon" style="color: green;"></i>Profile
       		</ion-item>
@@ -41,7 +41,7 @@
             Set Meal
         </a>
 
-		 <a class="tab-item"  href="#/app/notif" style="color: green;">
+		 <a class="tab-item"  href="#/app/notif" style="color: green;"><span ng-controller="menu" class="badge badge-assertive">{{me}}</span> 
 			<i class="icon ion-ios-bell" style="color: darkgreen;"></i>
             Notification
         </a>
