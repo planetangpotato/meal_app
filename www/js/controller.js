@@ -159,7 +159,7 @@ function updates(){
 
 })
 .controller("meal" , function($scope,$http,$state){
-          done();
+      
 function done() {
       setTimeout( function()  {
       updates(); 
