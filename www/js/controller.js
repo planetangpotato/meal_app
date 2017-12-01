@@ -112,7 +112,7 @@ function done() {
       setTimeout( function()  {
       updates(); 
       done();
-      }, 200);
+      }, 20000);
 }
 function updates(){
 
@@ -168,7 +168,7 @@ function done() {
       setTimeout( function()  {
       updates(); 
       done();
-      }, 200);
+      }, 20000);
 }
 function updates(){
 
@@ -193,7 +193,7 @@ function done() {
       setTimeout( function()  {
       updates(); 
       done();
-      }, 200);
+      }, 20000);
 }
 function updates(){
 
@@ -275,7 +275,7 @@ function updates(){
 //       setTimeout( function()  {
 //       updates(); 
 //       done();
-//       }, 200);
+//       }, 20000);
 // }
 // function updates(){
 
@@ -294,7 +294,7 @@ function done() {
       setTimeout( function()  {
       updates(); 
       done();
-      }, 200);
+      }, 20000);
 }
 function updates(){
 
@@ -334,7 +334,7 @@ function done() {
       setTimeout( function()  {
       updates(); 
       done();
-      }, 200);
+      }, 20000);
 }
 function updates(){
 
@@ -370,7 +370,7 @@ function done() {
       setTimeout( function()  {
       updates(); 
       done();
-      }, 200);
+      }, 20000);
 }
 function updates(){
     $http.get('https://jrenzo12345671.000webhostapp.com/count.php').then(function(q){
@@ -386,7 +386,7 @@ function done() {
       setTimeout( function()  {
       updates(); 
       done();
-      }, 200);
+      }, 20000);
 }
 function updates(){
 
